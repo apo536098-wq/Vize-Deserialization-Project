@@ -1,0 +1,14 @@
+[package]
+name = "rust_deserialization_project"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "rust_deserialization_project"
+crate-type = ["cdylib"]
+
+[dependencies]
+# Python 3.13 desteği için sürümü 0.22'ye çektik
+pyo3 = { version = "0.22", features = ["extension-module"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python (Derleme ve sanal ortam dosyaları)
 __pycache__/
 *.py[cod]
@@ -17,3 +18,10 @@ target/
 .DS_Store
 Thumbs.db
 desktop.ini
+=======
+target/
+.venv/
+__pycache__/
+*.wheel
+.python-version
+>>>>>>> fa8598c (Rust-Python Hibrit Güvenlik Katmanı: Vize Projesi Tamamlandı)
