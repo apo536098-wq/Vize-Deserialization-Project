@@ -1,76 +1,63 @@
+cat <<EOF > README.md
 # 🛡️ Hybrid Deserialization Security Shield (Python & Rust)
 
-<p align="center">
-  <img src="https://www.istinye.edu.tr/sites/default/files/isu_logo_tr.png" width="200" alt="İstinye Üniversitesi Logo">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Language-Rust-orange?style=for-the-badge&logo=rust" alt="Rust">
-  <img src="https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python" alt="Python">
-  <img src="https://img.shields.io/badge/Security-Advanced-red?style=for-the-badge" alt="Security">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
-</p>
-
 ---
 
-## 📑 İçindekiler
-* [📖 Proje Hakkında](#-proje-hakkında)
-* [🏗️ Mimari Yapı](#-mimari-yapı)
-* [🚀 Kurulum ve Çalıştırma](#-kurulum-ve-çalıştırma)
+## 📑 Table of Contents
+* [📖 About the Project](#-about-the-project)
+* [🏗️ Architectural Design](#%EF%B8%8F-architectural-design)
+* [🚀 Installation & Execution](#-installation--execution)
 * [🎬 Demo](#-demo)
-* [👨‍🏫 Akademik Bilgiler](#-akademik-bilgiler)
-* [⚖️ Lisans](#-lisans)
+* [👨‍🏫 Academic Information](#-academic-information)
+* [⚖️ License](#%EF%B8%8F-license)
 
 ---
 
-## 📖 Proje Hakkında
-Bu proje, Python'un `pickle` kütüphanesindeki **Insecure Deserialization** (Güvenli Olmayan Serisizleştirme) zafiyetini (OWASP A08:2021) analiz etmek ve bu zafiyete karşı **Rust** tabanlı hibrit bir savunma mekanizması geliştirmek amacıyla hazırlanmıştır.
+## 📖 About the Project
+This project was developed to analyze the **Insecure Deserialization** (OWASP A08:2021) vulnerability within Python's \`pickle\` library and to implement a **Rust-based hybrid defense mechanism** against it.
 
-### 🔍 Zafiyet Analizi
-Python `pickle` modülü, veriyi deserialize ederken kaynağı doğrulamaz. Saldırganlar `__reduce__` metodunu manipüle ederek sistemde **Uzaktan Kod Çalıştırma (RCE)** gerçekleştirebilir. Bu projede, savunma katmanı Python'dan daha güvenli bir bellek yönetimine sahip olan Rust katmanına taşınmıştır.
-
----
-
-## 🏗️ Mimari Yapı
-Proje, "Derinlemesine Savunma" (Defense in Depth) prensibine göre ikiye ayrılmıştır:
-
-1.  **Security Engine (Rust):** Kritik veri doğrulama motoru. `#[serde(deny_unknown_fields)]` kullanarak tanımlanmamış her türlü veriyi (saldırı kodlarını) anında reddeder.
-2.  **Secure Server (Python):** Kullanıcı etkileşimini yöneten ama Rust motorundan onay almadan hiçbir veriyi işlemeyen güvenli sunucu katmanı.
+### 🔍 Vulnerability Analysis
+The Python \`pickle\` module does not verify the source of the data during deserialization. Attackers can manipulate the \`__reduce__\` method to perform **Remote Code Execution (RCE)**. In this project, the defense layer is offloaded to a **Rust** environment, which offers superior memory management and safety compared to Python.
 
 ---
 
-## 🚀 Kurulum ve Çalıştırma
+## 🏗️ Architectural Design
+The project is designed following the **"Defense in Depth"** principle, consisting of two main layers:
 
-### Gereksinimler
+1.  **Security Engine (Rust):** The critical data validation core. By utilizing \`#[serde(deny_unknown_fields)]\`, it instantly rejects any undefined data or malicious payloads (attack vectors).
+2.  **Secure Server (Python):** Manages user interaction but refuses to process any data without explicit approval from the Rust security engine.
+
+---
+
+## 🚀 Installation & Execution
+
+### Prerequisites
 * Python 3.10+
 * Rust & Cargo
-* Maturin (`pip install maturin`)
+* Maturin (\`pip install maturin\`)
 
-### Adımlar
-```bash
-# 1. Rust Güvenlik Motorunu Derleyin
+### Steps
+\`\`\`bash
+# 1. Compile the Rust Security Engine
 cd Security_Engine
 maturin develop
 
-# 2. Güvenli Sunucuyu Başlatın
+# 2. Start the Secure Server
 cd ..
 python3 secure_server.py
+\`\`\`
 
+---
 
-👨‍🏫 Akademik Bilgiler
-Üniversite: İstinye Üniversitesi (İSÜ) - Topkapı Kampüsü
+## 👨‍🏫 Academic Information
+* **University:** İstinye University (İSÜ) - Topkapı Campus
+* **Department:** Cybersecurity Technology (BGT)
+* **Student:** Abdulkadir ERKAN
+* **Course:** Penetration Testing and Vulnerability Analysis
+* **Advisor:** Keyvan Arasteh
 
-Bölüm: Bilişim Güvenliği Teknolojisi (BGT)
+---
 
-Öğrenci: Abdulkadir ERKAN
-
-Ders: Sızma Testi ve Zafiyet Analizi
-
-Danışman: Keyvan Arasteh
-
-⚖️ Lisans
-Bu proje MIT Lisansı altında korunmaktadır. Detaylar için LICENSE dosyasına bakınız.
-
-
-
-
+## ⚖️ License
+This project is protected under the **MIT License**. See the \`LICENSE\` file for details.
+EOF
