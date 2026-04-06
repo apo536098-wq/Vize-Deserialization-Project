@@ -1,1 +1,19 @@
-/target
+# Python (Derleme ve sanal ortam dosyaları)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.env
+
+# Rust (Derleme klasörü - En önemlisi bu!)
+target/
+**/*.rs.bk
+
+# IDE & OS (Editör ve sistem dosyaları)
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
