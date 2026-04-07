@@ -1,6 +1,8 @@
 # 🛡️ Hybrid Deserialization Security Shield (Python & Rust)
 
-![İstinye University Logo](https://www.istinye.edu.tr/sites/default/files/isu_logo_tr.png)
+ 
+ <img width="211" height="80" alt="image" src="https://github.com/user-attachments/assets/3be9d094-f4e5-405d-9216-2e2a4d42e4f5" />
+
 
 [![Language - Rust](https://img.shields.io/badge/Language-Rust-orange?logo=rust)](https://www.rust-lang.org)
 [![Language - Python](https://img.shields.io/badge/Language-Python-blue?logo=python)](https://www.python.org)
