@@ -79,11 +79,7 @@ Real-time attack detection and blocking logic.
 
 System file structure and technical architecture walkthrough.
 
-
-
-
-
-
+---
 
 👨‍🏫 Academic Information
 University: İstinye University (İSÜ) - Topkapı Campus
