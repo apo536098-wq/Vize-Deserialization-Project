@@ -79,18 +79,13 @@ Real-time attack detection and blocking logic.
 
 System file structure and technical architecture walkthrough.
 
----
+
 
 👨‍🏫 Academic Information
-University: İstinye University (İSÜ) - Topkapı Campus
 
-Department: Cybersecurity Technology (BGT)
-
-Student: Abdulkadir ERKAN
-
-Course: Penetration Testing and Vulnerability Analysis
-
-Advisor: Keyvan Arasteh
-
-⚖️ License
-This project is protected under the MIT License. See the LICENSE file for details.
+Field Details
+University İstinye University (İSÜ) - Topkapı Campus
+Department Cybersecurity Technology (BGT)
+Student Abdulkadir ERKAN
+Course Penetration Testing and Vulnerability Analysis
+Advisor Keyvan Arasteh
